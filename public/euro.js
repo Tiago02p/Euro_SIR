@@ -1,3 +1,11 @@
+/*O código dentro do evento DOMContentLoaded é executado quando o DOM for completamente carregado.
+Isso garante que todos os elementos estejam prontos para serem manipulados.
+O botão "New Bet" tem um event listener que chama a função getNewBet() quando clicado.
+A função getNewBet() usa a API Fetch para fazer uma requisição GET para a rota /euro do servidor.
+Quando a resposta é recebida, ela é convertida em JSON e passada para a função updateDOM().
+A função updateDOM(bet) recebe a aposta e atualiza as listas no HTML com os números e estrelas gerados.
+
+Tiago Passos*/
 document.addEventListener('DOMContentLoaded', (e) => {
     const button = document.getElementById("genBtn");
 
@@ -6,7 +14,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     });
 
     function getNewBet() {
-        fetch('https://euro-sir-tiagopassos.onrender.com/euro') 
+        fetch('https://euro-sir-tiagopassos.onrender.com/euro')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

@@ -1,11 +1,19 @@
-const express = require('express'); 
+/*Este ficheiro faz a gestão de rotas e responde às requisições feitas pelo cliente.
+O módulo Express é importado e uma nova instância da app é criada.
+O app.use(express.static('public')) permite que o Express sirva os ficheiros estáticos da pasta public.
+A rota /euro gera uma nova aposta quando chamada. Ela retorna um JSON com números e estrelas, usando a função generateBet.
+Funções:
+- generate(n, min, max): Gera um conjunto de n números aleatórios entre minimo e maximo.
+- generateBet(): Chama a função generate para criar os números e estrelas da aposta.
+- Iniciar o Server: O server está na porta 3000 localmente
+
+Tiago Passos
+*/
+
+const express = require('express');
 const app = express();
 
-app.use(express.static('public')); // Serve arquivos estáticos da pasta public
-
-app.get('/hello', (req, res) => {
-    return res.send('Hello');
-});
+app.use(express.static('public'));
 
 // Endpoint para gerar a aposta
 app.get('/euro', (req, res) => {
