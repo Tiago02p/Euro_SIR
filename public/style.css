@@ -1,0 +1,74 @@
+@font-face {
+    font-family: anotherFont;
+    src: url("Merriweather-Black.ttf");
+}
+
+@font-face {
+    font-family: BFont;
+    src: url("BeautifulPeoplePersonalUse-dE0g.ttf");
+}
+
+html {
+    background-color: #f0f8ff; 
+    font-family: "anotherFont";
+}
+
+h1 {
+    text-align: center;
+    font-size: 80px;
+    color: #2e348b; 
+}
+
+#divBet {
+    background-color: #a3f1ff; 
+    border-radius: 50px;
+    padding: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#divcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div#divBet {
+    width: 50%;
+    text-align: center;
+}
+
+ol.numbers li {
+    font-family: anotherFont;
+    display: inline-block;
+    width: 100px;
+    height: 75px;
+    font-size: 50px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    color: white;
+}
+
+#olMain li {
+    background-color: #181a8d;
+}
+
+#olStars li {
+    background-color: #00d607; 
+}
+
+#genBtn {
+    width: 200px;
+    height: 75px;
+    font-size: 20px;
+    background-color: #3256cd; 
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#genBtn:hover {
+    background-color: #000000; 
+}
