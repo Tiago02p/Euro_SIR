@@ -7,7 +7,7 @@ app.get('/hello', (req, res) => {
     return res.send('Hello');
 });
 
-app.get('/euro.js', (req, res) => {
+app.get('/euro', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     return res.json(generateBet());
 });
@@ -23,8 +23,8 @@ function generate(n, min, max) {
 
 function generateBet() {
     return {
-        numbers: generate(5, 1, 50),
-        stars: generate(2, 1, 12)
+        "numbers": generate(5, 1, 50),
+        "stars": generate(2, 1, 12)
     };
 }
 
