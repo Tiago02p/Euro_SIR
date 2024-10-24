@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     });
 
     function getNewBet() {
-        fetch('http://localhost:3000/projeto/public/euro.js')
+        fetch('http://localhost:3000/')
             .then((response) => response.json())
             .then(bet => {
                 updateDOM(bet);
