@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     });
 
     function getNewBet() {
-        fetch('http://localhost:3000/euro')
+        fetch('https://euro-sir-tiagopassos.onrender.com/')
             .then((response) => response.json())
             .then(bet => {
                 updateDOM(bet);
