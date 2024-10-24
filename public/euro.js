@@ -6,8 +6,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
     });
 
     function getNewBet() {
-        fetch('https://euro-sir-tiagopassos.onrender.com')
-            .then(response => response.json())
+        fetch('https://euro-sir-tiagopassos.onrender.com/euro.js')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(bet => {
                 updateDOM(bet);
             })
