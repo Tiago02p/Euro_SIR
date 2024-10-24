@@ -1,17 +1,19 @@
-const express = require('express');
+const express = require('express'); 
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static('public')); // Serve arquivos estáticos da pasta public
 
 app.get('/hello', (req, res) => {
     return res.send('Hello');
 });
 
+// Endpoint para gerar a aposta
 app.get('/euro', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     return res.json(generateBet());
 });
 
+// Função para gerar números aleatórios
 function generate(n, min, max) {
     let set = new Set();
     while (set.size < n) {
@@ -21,6 +23,7 @@ function generate(n, min, max) {
     return Array.from(set).sort((a, b) => a - b);
 }
 
+// Função que retorna a aposta com números e estrelas
 function generateBet() {
     return {
         "numbers": generate(5, 1, 50),
@@ -28,6 +31,7 @@ function generateBet() {
     };
 }
 
+// Inicia o servidor
 app.listen(3000, () => {
     console.log("listening on port 3000");
 });
