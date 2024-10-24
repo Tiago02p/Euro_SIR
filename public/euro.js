@@ -7,11 +7,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     function getNewBet() {
         fetch('https://euro-sir-tiagopassos.onrender.com')
-            .then((response) => response.json())
+            .then(response => response.json())
             .then(bet => {
                 updateDOM(bet);
             })
-            .catch((error) => console.error('Erro:', error));
+            .catch((error) => {
+                console.error('Erro:', error);
+            });
     }
 
     function updateDOM(bet) {
