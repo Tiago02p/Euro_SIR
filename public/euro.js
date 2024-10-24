@@ -6,19 +6,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
     });
 
     function getNewBet() {
-        fetch('https://euro-sir-tiagopassos.onrender.com/euro.js')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
+        fetch('http://localhost:3000')
+            .then((response) => response.json())
             .then(bet => {
                 updateDOM(bet);
             })
-            .catch((error) => {
-                console.error('Erro:', error);
-            });
+            .catch((error) => console.error('Erro:', error));
     }
 
     function updateDOM(bet) {
