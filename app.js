@@ -7,7 +7,7 @@ app.get('/hello', (req, res) => {
     return res.send('Hello');
 });
 
-app.get('/projeto/public/euro.js', (req, res) => {
+app.get('/public/euro.js', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     return res.json(generateBet());
 });
